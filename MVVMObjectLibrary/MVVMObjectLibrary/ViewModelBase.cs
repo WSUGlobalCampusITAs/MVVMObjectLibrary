@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Windows.Input;
 
 namespace MVVMObjectLibrary
 {
@@ -9,7 +10,11 @@ namespace MVVMObjectLibrary
     /// </summary>
     public class ViewModelBase : INotifyPropertyChanged, IDisposable
     {
+        protected ICommand _settingsCommand;
+
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public ICommand SettingsCommand { get { return _settingsCommand; } }
 
         protected ViewModelBase()
         {
